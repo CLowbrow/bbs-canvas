@@ -7,17 +7,17 @@
   document.head.appendChild(styleNode);
 
 	var wrapper = document.getElementsByClassName('wrapper')[0];
-	var drawingContainer = document.createElement("div");
+	var drawingContainer = document.createElement('div');
 	drawingContainer.id = 'bbsdraw';
 	wrapper.appendChild(drawingContainer);
-	drawingContainer.innerHTML = '<div class="canvas"></div><div class="clearfix"></div>' +
-		'<p class="draw">draw</p><p class="erase">erase</p>' +
-		'<p class="clear">clear</p><p class="export">export</p>' + '<div class="clearfix"></div>';
+	drawingContainer.innerHTML = '<div class=\'canvas\'></div><div class=\'clearfix\'></div>' +
+		'<p class=\'draw\'>draw</p><p class=\'erase\'>erase</p>' +
+		'<p class=\'clear\'>clear</p><p class=\'export\'>export</p>' + '<div class=\'clearfix\'></div>';
 
 
 	
   var COL_LENGTH = 45;
-  var tout = document.getElementsByName("content")[0];
+  var tout = document.getElementsByName('content')[0];
   var drawing = false;
   var canvas = document.getElementsByClassName('canvas')[0];
   var characters = [
@@ -32,24 +32,24 @@
   ];
   
   function makeCell() {
-    var cell = document.createElement("div");
-    cell.style.color = "white";
-    cell.classList.add("point");
+    var cell = document.createElement('div');
+    cell.style.color = 'white';
+    cell.classList.add('point');
     cell.innerHTML = characters[0];
     return cell;
   }
   
   function makeClearfix() {
-    var div = document.createElement("div");
-    div.style.clear = "both";
+    var div = document.createElement('div');
+    div.style.clear = 'both';
     div.style.height = 0;
     return div;
   }
   
   function draw(el) {
     var index = characters.indexOf(el.innerHTML);
-    if (el.style.color == "white") {
-      el.style.color = "black";
+    if (el.style.color == 'white') {
+      el.style.color = 'black';
     } else if (index < (characters.length - 1)){
       el.innerHTML = characters[index + 1];
     }
@@ -69,11 +69,11 @@
   
   function tada(chars) {
     var lines = [];
-    var output = "+--MY ART" + new Array(COL_LENGTH - 7).join('-') + '+\n';
+    var output = '+--MY ART' + new Array(COL_LENGTH - 7).join('-') + '+\n';
     for (var i = 0; i < chars.length; i += COL_LENGTH) {
       output += '|' + chars.slice(i, i + COL_LENGTH).join('') + '|\n';
     }
-    output += "+" + new Array(COL_LENGTH + 1).join('-') + '+\n';
+    output += '+' + new Array(COL_LENGTH + 1).join('-') + '+\n';
     tout.value = tout.value + output;
   }
   
