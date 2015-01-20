@@ -5,7 +5,15 @@
 
   styleNode.appendChild(content);
   document.head.appendChild(styleNode);
-  
+
+	var drawingContainer = document.createElement("div");
+	drawingContainer.id = 'bbsdraw';
+	drawingContainer.innerHTML = '<div id="canvas"></div><div class="clearfix"></div>' +
+		'<p class="draw">draw</p><p class="erase">erase</p>' +
+		'<p class="clear">clear</p><p class="export">export</p>' + '<div class="clearfix"></div>';
+	var wrapper = document.getElementsByClassName('wrapper')[0];
+	wrapper.appendChild(drawingContainer);
+	
   var COL_LENGTH = 45;
   var tout = document.getElementsByName("content")[0];
   var drawing = false;
