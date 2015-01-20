@@ -17,10 +17,14 @@
 		-ms-user-select: none;
 		user-select: none;
 		cursor: pointer;
+		overflow: hidden;
 }
 
 #bbsdraw .point {
 		float: left;
+		padding: 0px;
+		margin: 0px;
+		line-height: 100%;
 }
 
 #bbsdraw .clearfix {

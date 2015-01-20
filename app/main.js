@@ -6,18 +6,20 @@
   styleNode.appendChild(content);
   document.head.appendChild(styleNode);
 
+	var wrapper = document.getElementsByClassName('wrapper')[0];
 	var drawingContainer = document.createElement("div");
 	drawingContainer.id = 'bbsdraw';
-	drawingContainer.innerHTML = '<div id="canvas"></div><div class="clearfix"></div>' +
+	wrapper.appendChild(drawingContainer);
+	drawingContainer.innerHTML = '<div class="canvas"></div><div class="clearfix"></div>' +
 		'<p class="draw">draw</p><p class="erase">erase</p>' +
 		'<p class="clear">clear</p><p class="export">export</p>' + '<div class="clearfix"></div>';
-	var wrapper = document.getElementsByClassName('wrapper')[0];
-	wrapper.appendChild(drawingContainer);
+
+
 	
   var COL_LENGTH = 45;
   var tout = document.getElementsByName("content")[0];
   var drawing = false;
-  var canvas = document.getElementById('canvas');
+  var canvas = document.getElementsByClassName('canvas')[0];
   var characters = [
     '.',
 	  ':',
@@ -30,11 +32,11 @@
   ];
   
   function makeCell() {
-    var div = document.createElement("div");
-    div.style.color = "white";
-    div.classList.add("point");
-    div.innerHTML = characters[0];
-    return div;
+    var cell = document.createElement("div");
+    cell.style.color = "white";
+    cell.classList.add("point");
+    cell.innerHTML = characters[0];
+    return cell;
   }
   
   function makeClearfix() {
