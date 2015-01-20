@@ -1,7 +1,7 @@
 /*jshint strict:false, browser:true */
 (function bookmarklet() {
-  var styleNode = document.createElement('style'),
-			content = document.createTextNode('body { background: cornflowerblue; }');
+  var styleNode = document.createElement('style');
+	var content = document.createTextNode('{{styles}}');
 
   styleNode.appendChild(content);
   document.head.appendChild(styleNode);

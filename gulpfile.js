@@ -11,9 +11,11 @@ var jshintStylish = require('jshint-stylish');
 var map = require('map-stream');
 var fs = require('fs');
 var replace = require('gulp-replace');
+var minifyCSS = require('gulp-minify-css');
 
-gulp.task('scripts', ['clean'], function() {
+gulp.task('scripts', ['jam-into-js'], function() {
   return gulp.src('app/{,*/}*.js')
+		.pipe(replace('{{styles}}',  fs.readFileSync('dist/styles.css', "utf8")))
     .pipe(gulpJshint())
     .pipe(gulpJshint.reporter(jshintStylish))
     .pipe(gulpUglify())
@@ -21,7 +23,13 @@ gulp.task('scripts', ['clean'], function() {
     .pipe(gulp.dest('dist'));
 });
 
-gulp.task('jam-into-html', ['scripts', 'clean'], function () {
+gulp.task('jam-into-js', ['clean'], function() {
+	return gulp.src('app/styles.css')
+		.pipe(minifyCSS())
+		.pipe(gulp.dest('dist'));
+});
+
+gulp.task('jam-into-html', ['scripts'], function () {
 	var source = fs.readFileSync('dist/bookmarklet.js', "utf8");
 	return gulp.src('app/index.html')
 		.pipe(replace('{{source-here}}', source))

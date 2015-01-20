@@ -1,0 +1,32 @@
+#bbsdraw .canvas {
+		border: 1px solid black;
+		overflow: auto;
+		font-family: monospace;
+		float: left;
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+		cursor: pointer;
+}
+
+#bbsdraw .point {
+		float: left;
+}
+
+#bbsdraw .clearfix {
+		clear: both;
+}
+
+#bbsdraw .draw,
+#bbsdraw .erase,
+#bbsdraw .clear,
+#bbsdraw .export {
+		cursor: pointer;
+		font-weight: bold;
+		float: left;
+		padding: 20px;
+		border: 1px solid black;
+}
