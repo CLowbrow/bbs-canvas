@@ -1,25 +1,25 @@
 /*jshint strict:false, browser:true */
 (function bookmarklet() {
   var styleNode = document.createElement('style'),
-    content = document.createTextNode('body { background: cornflowerblue; }');
+			content = document.createTextNode('body { background: cornflowerblue; }');
 
   styleNode.appendChild(content);
   document.head.appendChild(styleNode);
   
-  var COL_LENGTH = 45
+  var COL_LENGTH = 45;
   var tout = document.getElementsByName("content")[0];
   var drawing = false;
   var canvas = document.getElementById('canvas');
   var characters = [
     '.',
-    ':',
+	  ':',
     '+',
     'I',
     '?',
     'Z',
     '$',
     'M'
-  ]
+  ];
   
   function makeCell() {
     var div = document.createElement("div");
@@ -54,7 +54,7 @@
     for(var j = 0; j < COL_LENGTH; j++) {
       canvas.appendChild(makeCell());
     }
-    canvas.appendChild(makeClearfix())
+    canvas.appendChild(makeClearfix());
   }
   
   function tada(chars) {
