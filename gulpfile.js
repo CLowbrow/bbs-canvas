@@ -12,6 +12,7 @@ var map = require('map-stream');
 var fs = require('fs');
 var replace = require('gulp-replace');
 var minifyCSS = require('gulp-minify-css');
+var escape = require('escape-html');
 
 gulp.task('scripts', ['jam-into-js'], function() {
   return gulp.src('app/{,*/}*.js')
@@ -30,7 +31,7 @@ gulp.task('jam-into-js', ['clean'], function() {
 });
 
 gulp.task('jam-into-html', ['scripts'], function () {
-	var source = fs.readFileSync('dist/bookmarklet.js', "utf8");
+	var source = escape(fs.readFileSync('dist/bookmarklet.js', "utf8"));
 	return gulp.src('app/index.html')
 		.pipe(replace('{{source-here}}', source))
 		.pipe(gulp.dest('dist'));

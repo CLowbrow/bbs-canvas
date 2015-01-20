@@ -10,9 +10,9 @@
 	var drawingContainer = document.createElement('div');
 	drawingContainer.id = 'bbsdraw';
 	wrapper.appendChild(drawingContainer);
-	drawingContainer.innerHTML = '<div class=\'canvas\'></div><div class=\'clearfix\'></div>' +
-		'<p class=\'draw\'>draw</p><p class=\'erase\'>erase</p>' +
-		'<p class=\'clear\'>clear</p><p class=\'export\'>export</p>' + '<div class=\'clearfix\'></div>';
+	drawingContainer.innerHTML = '<div class="canvas"></div><div class="clearfix"></div>' +
+		'<p class="draw">draw</p><p class="erase">erase</p>' +
+		'<p class="clear">clear</p><p class="export">export</p>' + '<div class="clearfix"></div>';
 
 
 	

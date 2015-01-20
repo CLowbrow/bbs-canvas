@@ -2,6 +2,7 @@
   "name": "bbs-canvas",
   "version": "0.0.0",
   "dependencies": {
+    "escape-html": "^1.0.1",
     "gulp-replace": "^0.5.1"
   },
   "devDependencies": {
